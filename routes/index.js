@@ -119,6 +119,57 @@ router.get('/new', function (req, res, next) {
   });
 });
 
+// UPDATE ROUTES
+router.get('/update/:id', function(req, res, next) {
+
+  //make a post request to our database
+  request({
+  uri: "http://localhost:8000/posts/" + req.params.id,
+  method: "GET",
+  }, function(error, response, body) {
+      console.log(JSON.parse(body));
+      //send a response message
+      res.render('update', {message: false, posts: JSON.parse(body)});
+  });
+
+});
+
+router.post('/update/:id', function(req, res, next) {
+  request({
+    uri: "http://localhost:8000/posts/" + req.params.id,
+  method: "PATCH",
+  form: {
+      title: req.body.title,
+      content: req.body.content,
+      author: req.body.author
+  }
+  }, function(error, response, body) {
+      // console.log(body);
+      //send a response message
+      res.render('update', {message: 'Successfully Changed.', posts: JSON.parse(body)});
+      alert(`go home`)
+  });
+});
+
+// Route for delete 
+/* GET create page. */
+router.get('/delete/:id', function(req, res, next) {
+  console.log(req.params.id)
+//make a post request to our database
+request({
+  uri: "http://localhost:8000/posts/"  + req.params.id,
+  method: "DELETE",
+  }, function(error, response, body) {
+      // console.log(body);
+      //send a response message
+
+      let data = {
+          message: 'Successfully Removed.',
+      }
+
+      res.redirect('..');
+  });
+});
 
 
 

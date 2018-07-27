@@ -39,13 +39,17 @@
 <p>By <%= posts.author %></p>
 
       
-                    
-<button style="width:10em" class="btn btn-block btn-primary"> <a href="/update/<%= posts.id %>" style="color: black" >Update</a></button>
-<button style="width:10em" class="btn btn-block btn-danger"><a href="/delete/<%= posts.id %>" style="color: black">Delete</a></button>
+<button style="width:10em">
+  <a href="/update/<%= posts.id %>" class="btn btn-block btn-primary">Update</a>
+</button>
+<button>
+  <a href="/delete/<%= posts.id %>" class="btn btn-block btn-danger">Delete</a>
+</button>          
+
 </div>
 
-
+<footer>
+  <p>&copy; 2018 Great Foods</p>
+</footer>
 </body>
-
-
 </html>
