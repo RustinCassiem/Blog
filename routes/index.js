@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 var posts = require('../db.json');
 var request = require('request');
-
+var store = require('../db.json');
+var arrayData = store.users;
+var pos = store.posts;
+ 
 
 // var app = express();
 // var reload = require('../../reload');
@@ -16,7 +19,6 @@ router.get('/', function (req, res, next) {
     posts: posts.posts
   });
 });
-
 
 /* GET create page. */
 router.get('/create', function (req, res, next) {
@@ -108,6 +110,32 @@ router.post('/update', function(req, res, next) {
   });
 })
 
+
+/* GET Register Page  */
+router.get('/reg', function (req, res, next) {
+  // console.log(posts);
+  
+router.get('/reg', function (req, res, next) {
+  if (req.cookies.user) {
+    for (var m in arrayData) {
+      if (arrayData[m].user == req.cookies.user) {
+        
+        res.render('index', {name:req.cookies.user, data: pos, messages: false});
+  
+      }
+    }
+  } else {
+    res.render('index', {name: false, data: posts, messages: false});
+  }
+
+});
+
+  res.render('reg', {
+    title: "Register Page"
+  });
+  console.log(req.body);
+
+});
 
 
 // Route for new blog created interlude

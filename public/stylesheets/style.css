@@ -1,12 +1,9 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Jul 15, 2018, 12:24:08 PM
-    Author     : FUJITSU
-*/
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
+body{
+  background-color: rgb(240, 235, 229);
+  font-family: 'Bitter', serif;
+}
 /*Site wide styling*/
 *{
   margin: 0;
@@ -15,13 +12,16 @@ and open the template in the editor.
   /* overflow-x: hidden; */
 }
 
+a{
+  color: white;
+}
 /* site wide buttons */
 button{
   padding: 3px 16px;
   font-size: 20px;
-  background-color: rgb(120, 248, 45);
-  color:rgb(247, 247, 247);
-  border: 1px solid rgb(120, 248, 45);
+  background-color: rgb(0, 0, 0);
+  color:rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   margin: 5px 0;
 }
@@ -36,6 +36,7 @@ img{
 .articleContainer .article{
   padding: 10px;
   border: 1px solid #ccc;
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -55,8 +56,24 @@ img{
 
 }
 
+.button_pos{
+ 
+}
+
+.br{
+  height: 10%;
+}
+
+.jumbotron{
+  margin-top: 3%;
+  background-color: rgb(228, 117, 13);
+}
+
 /*Responsive for tablet*/
-@media screen and (min-width: 650px){
+@media screen and (max-width: 650px){
+  .jumbotron{
+    margin-top:10%;
+  }
   .articleContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;

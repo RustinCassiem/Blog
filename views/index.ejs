@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
 
 <head>
@@ -17,12 +13,8 @@ and open the template in the editor.
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
-
 </head>
-
 <body>
-
-
     <nav class="navbar navbar-fixed-top navbar-inverse">
         <div class="container">
           <div class="navbar-header">
@@ -33,17 +25,16 @@ and open the template in the editor.
             <ul class="nav navbar-nav">
               <li class="active"><a href="/">Home</a></li>
               <li><a href="/create">Create content</a></li>
-              <li><a href="/posts">Posts</a></li>
+              <li><a href="/reg">Register</a></li>
             </ul>
           </div>
         </div>
       </nav>
-
+     <div class="br"> </div>
       <div style="text-align: center " class="jumbotron">
         <h1>Best Italian Foods</h1>
         <p>Take a trip to Italy to find out what makes the cuisine from this country a global hit.</p>
       </div>
-    </div>
     <div  style="margin-top: 10em" class="articleContainer">
 
 
@@ -57,19 +48,17 @@ and open the template in the editor.
 
                     <h1> <%= post.title %></h1>
                     
-                       <p> <%- post.content %></p>
+                       <p class=""> <%- post.content %></p>
 
                     <p class=""> Author: 
                         <%= post.author %>
                     </p>
-                    <button id="<%= post.id %>"><a href="/<%= post.id %>">Read More</a></button>
-                </section>
+                    <button class="button_pos" id="<%= post.id %>"><a href="/<%= post.id %>">Read More</a></button>
                 </section>
 
                 <% }); %>
                     <% } %>
-
-    </div>
+                  </div>
 
     <footer>
         <p>&copy; 2018 Great Foods</p>
